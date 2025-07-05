@@ -2,11 +2,12 @@ import { Star } from 'lucide-react'
 import LinkButton from './LinkButton.jsx'
 import React from 'react'
 // import "../../assets/shopping.png"
+import { starGenerator } from '../constants/helper.jsx'
 
 const ProductCard = ({
     name="Product Title", 
     price="2000", 
-    rating="4", 
+    rating="3.5", 
     image={
         url: "https://images.pexels.com/photos/1851164/pexels-photo-1851164.jpeg",
         id: "skjghh83",
@@ -21,11 +22,7 @@ const ProductCard = ({
 
             <div className="flex justify-between " >
                 <div className="flex">
-                    <Star />
-                    <Star />
-                    <Star />
-                    <Star />
-                    <Star />
+                    {starGenerator(rating)}
                 </div>
                 <span>${price}</span>
             </div>
