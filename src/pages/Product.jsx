@@ -5,6 +5,7 @@ import {Button} from "../components/ui/button.jsx"
 import { starGenerator } from '../components/constants/helper';
 import { Circle, Minus, Plus } from 'lucide-react';
 import { Colors } from '../components/constants/colors';
+import Review from '../components/custom/Review.jsx';
 
     const imagesArray = [ 
     {
@@ -49,11 +50,11 @@ const [address, setAddress] = useState("")
         <main className="w-[93vw]   flex flex-col sm:flex-row justify-start items-start gap-10 mx-auto my-10">
 
             {/* left side */}
-            <div className="grid sm:w-[50%]  gap-3 pl-[10px] pt-[10px]">
+            <div className="grid sm:w-[50%]  gap-5 pl-[10px] pt-[10px]">
                 <img 
                 src={imagesArray[0].url} 
                 
-                className="w-full lg:h-[25em] rounded-xl object-center object-contain border dark:border-none " />
+                className="w-full lg:h-[27em] rounded-xl object-center object-contain border dark:border-none " />
 
                 <div className="grid grid-cols-4 gap-3">
                 {imagesArray.map(({url, id}) => (
@@ -150,6 +151,8 @@ const [address, setAddress] = useState("")
         </main>
 
         {/* seview section */}
+
+        <Review />
 
     </div>
     </>

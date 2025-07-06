@@ -6,6 +6,7 @@ import Footer from "./components/custom/Footer.jsx";
 import SignUp from "./pages/Signup.jsx";
 import Login from "./pages/Login.jsx";
 import Product from "./pages/Product.jsx";
+import Checkout from "./pages/Checkout.jsx";
 
 export default function App() {
 
@@ -53,6 +54,18 @@ export default function App() {
         <>
         <Navbar />
         <Product />
+        <Footer />
+        </>
+      )
+    },
+
+    {
+      path: "/checkout",
+      element: 
+      (
+        <>
+        <Navbar />
+        <Checkout />
         <Footer />
         </>
       )
