@@ -7,6 +7,11 @@ import SignUp from "./pages/Signup.jsx";
 import Login from "./pages/Login.jsx";
 import Product from "./pages/Product.jsx";
 import Checkout from "./pages/Checkout.jsx";
+import AdminLogin from "./pages/AdminLogin.jsx";
+import Error from "./pages/Error.jsx";
+import Success from "./pages/Success.jsx";
+import RootLayouts from "./components/layouts/RootLayouts.jsx";
+import AdminLayout from "./components/layouts/AdminLayout.jsx";
 
 export default function App() {
 
@@ -15,11 +20,8 @@ export default function App() {
       path: "/",
       element: 
       (
-        <>
-        <Navbar />
-        <Home />
-        <Footer />
-        </>
+        // <RootLayouts ><Home /></RootLayouts>
+        <RootLayouts children={<Home />} />
       )
     },
 
@@ -27,11 +29,7 @@ export default function App() {
       path: "/signup",
       element: 
       (
-        <>
-        <Navbar />
-        <SignUp />
-        <Footer />
-        </>
+        <RootLayouts children={<SignUp />} />    
       )
     },
 
@@ -39,11 +37,7 @@ export default function App() {
       path: "/login",
       element: 
       (
-        <>
-        <Navbar />
-        <Login />
-        <Footer />
-        </>
+        <RootLayouts children={<Login />} />
       )
     },
 
@@ -51,11 +45,7 @@ export default function App() {
       path: "/product",
       element: 
       (
-        <>
-        <Navbar />
-        <Product />
-        <Footer />
-        </>
+        <RootLayouts children={<Product />} />
       )
     },
 
@@ -63,11 +53,39 @@ export default function App() {
       path: "/checkout",
       element: 
       (
-        <>
-        <Navbar />
-        <Checkout />
-        <Footer />
-        </>
+        <RootLayouts children={<Checkout />} />
+      )
+    },
+
+    {
+      path: "/admin/login",
+      element: 
+      (
+        <RootLayouts children={<AdminLogin />} />
+      )
+    },
+
+    {
+      path: "/admin/dashboard",
+      element: 
+      (
+        <AdminLayout />
+      )
+    },
+
+    {
+      path: "/*",
+      element: 
+      (
+        <Error />
+      )
+    },
+
+    {
+      path: "/success",
+      element: 
+      (
+        <Success />
       )
     },
   ]);
