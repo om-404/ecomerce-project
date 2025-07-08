@@ -1,13 +1,13 @@
 import { SidebarProvider, SidebarTrigger } from "../ui/sidebar.jsx"
 import  AppSidebar  from "../custom/AppSidebar.jsx"
 
-const AdminLayout = () => {
+const AdminLayout = ({children}) => {
   return (
     <SidebarProvider>
       <AppSidebar />
       <main>
         <SidebarTrigger />
-        {/* {children} */}
+        <div className="sm:m-10">{children}</div>
       </main>
     </SidebarProvider>
   )
